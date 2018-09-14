@@ -10,7 +10,7 @@ Masspec for analysis
 #library(limma)
 #library(qvalue)
 
-dat <- read.table("overview_unique_peptide_counts.tab", header=TRUE, row.names=1)
+dat <- read.table("exampledata.tab", header=TRUE, row.names=1)
 dat <- overview_unique_peptide_counts
 dim(dat)
 str(dat)
