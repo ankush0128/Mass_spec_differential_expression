@@ -1,5 +1,5 @@
-# Mass_spec_differential_expression
- 
+Masspec for analysis 
+
 #Source of the script for massspec analysishttp://www.biostat.jhsph.edu/~kkammers/software/eupa/R_guide.html
 
 #source("http://bioconductor.org/biocLite.R")
@@ -9,8 +9,6 @@
 
 #library(limma)
 #library(qvalue)
-source("http://www.biostat.jhsph.edu/~kkammers/software/eupa/source.functions.r")
-
 
 dat <- read.table("overview_unique_peptide_counts.tab", header=TRUE, row.names=1)
 dat <- overview_unique_peptide_counts
@@ -18,9 +16,13 @@ dim(dat)
 str(dat)
 cha <- c( "A5","A6","B5","B6","C5","C6","D5","D6")
 
+#source("http://www.biostat.jhsph.edu/~kkammers/software/eupa/source.functions.r") (can also be loaded from the link )
 #The function eb.fit (eb: empirical Bayes) performes the statistical analysis of interest: two sample t-tests. 
 #The output of this procedure is a data frame that especially contains for each protein its log2-fold-change, and ordinary as well as moderated p-values and q-values. 
-#The results are sorted by moderated p-values in increasing order.
+#The results are sorted by moderated p-values in increasing order. It can also be loaded from the link
+#source("http://www.biostat.jhsph.edu/~kkammers/software/eupa/source.functions.r") 
+
+
 function(dat, design){
   n <- dim(dat)[1]
   fit <- lmFit(dat, design)
